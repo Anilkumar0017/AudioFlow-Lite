@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioFlow Lite - Reader</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <main class="home-container">
+
+        <h1>AudioFlow Lite</h1>
+        <h2>Choose Your Reading Mode</h2>
+
+        <p>Select how you want to understand the document.</p>
+            
+<section>
+    <h2>Upload Your Document</h2>
+
+    <input type="file" id="document-upload" accept=".txt">
+
+    <button onclick="uploadDocument()">Load Document</button>
+
+    <p id="upload-status" aria-live="polite"></p>
+</section>
+
+        <section>
+            <button onclick="showText('gist')">Gist</button>
+            <button onclick="showText('simplified')">Simplified</button>
+            <button onclick="showText('verbatim')">Verbatim</button>
+        </section>
+
+        <section>
+            <h2 id="mode-title" aria-live="polite" aria-atomic="true">
+    Original Text
+</h2>
+
+
+<section>
+    <h2>Section Navigation</h2>
+
+    <button onclick="previousSection()">
+        Previous Section
+    </button>
+
+    <span id="section-number">Section 1</span>
+
+    <button onclick="nextSection()">
+        Next Section
+    </button>
+
+    <p id="section-status" aria-live="polite"></p>
+</section>
+
+
+
+
+
+
+            <p id="reading-text">
+                Artificial intelligence is a technology that enables
+                computers to perform tasks that normally require
+                human intelligence.
+            </p>
+        </section>
+
+        <section>
+            <h2>Audio Controls</h2>
+
+            <button onclick="speakText()">Play</button>
+            <button onclick="pauseText()">Pause</button>
+            <button onclick="resumeText()">Resume</button>
+            <button onclick="stopText()">Stop</button>
+        </section>
+
+        <section>
+            <h2>Explain a Difficult Word</h2>
+
+            <label for="word-input">Enter a difficult word:</label>
+
+        <input type="text" id="word-input"
+          placeholder="Enter a word">
+
+            <button onclick="explainWord()">Explain</button>
+
+            <p id="word-explanation" aria-live="polite"></p>
+        </section>
+
+        <a href="/" class="primary-button">Back to Home</a>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
+        
+ 
